@@ -1,18 +1,9 @@
 <template>
-    <lightning-card title = "Installation Certificate Form">
+    <lightning-card>
         <lightning-button label="Speed Test" onclick={handleSpeedTestClick}></lightning-button>
         
-        <template if:true={showSpeedTest}>
-            <div class="slds-modal slds-fade-in-open">
-                <div class="slds-modal__container">
-                    <div class="slds-modal__content">
-                        <iframe src={testUrl} width="100%" height="600px" title="Speed Test"></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="slds-backdrop slds-backdrop_open"></div>
-        </template>
-        <lightning-input label="Download Speed (Kbps)" value={downloadSpeed} readonly></lightning-input>
-        <lightning-input label="Upload Speed (Kbps)" value={uploadSpeed} readonly></lightning-input>
+        <lightning-input label="Download Speed (Mbps)" value={downloadSpeed} readonly></lightning-input>
+        <lightning-input label="Upload Speed (Mbps)" value={uploadSpeed} readonly></lightning-input>
+        <lightning-input label="Ping (ms)" value={ping} readonly></lightning-input>
     </lightning-card>
 </template>
