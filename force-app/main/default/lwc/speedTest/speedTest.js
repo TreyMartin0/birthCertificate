@@ -5,6 +5,8 @@ export default class SpeedTest extends LightningElement {
     testUrl = '';
     downloadSpeed = '';
     uploadSpeed = '';
+
+    testResultsBound = this.handleTestResults.bind(this);
     
     handleSpeedTestClick() {
         this.showSpeedTest = true;
@@ -12,19 +14,21 @@ export default class SpeedTest extends LightningElement {
     }
 
     attachMessageListener() {
-        window.addEventListener('message', this.handleTestResults.bind(this));
+        window.addEventListener('message', this.testResultsBound);
     }
 
     handleTestResults(event) {
-        if (event.origin !== '') {
+        const origin = ''
+        if (event.origin !== origin ){
+            console.warn('Message blocked from incorrect origin')
             return;
         }
         const result = event.data;
-        if (results) {
-            this.downloadSpeed = results.download || 'n/a'
-            this.uploadSpeed = results.upload || 'n/a'
+        if (result) {
+            this.downloadSpeed = result.download || 'n/a'
+            this.uploadSpeed = result.upload || 'n/a'
             this.showSpeedTest = false;
         }
-        window.removeEventListener('message', this.handleTestResults.bind(this));
+        window.removeEventListener('message', this.testResultsBound);
     }
 }
