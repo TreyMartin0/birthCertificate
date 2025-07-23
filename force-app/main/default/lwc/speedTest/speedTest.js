@@ -2,7 +2,7 @@ import { LightningElement } from 'lwc';
 
 export default class SpeedTest extends LightningElement {
     showSpeedTest = false;
-    testUrl = '';
+    testUrl = 'https://curious-pie-94aa45.netlify.app/';
     downloadSpeed = '';
     uploadSpeed = '';
 
@@ -18,7 +18,7 @@ export default class SpeedTest extends LightningElement {
     }
 
     handleTestResults(event) {
-        const origin = ''
+        const origin = 'https://curious-pie-94aa45.netlify.app/'
         if (event.origin !== origin ){
             console.warn('Message blocked from incorrect origin')
             return;
