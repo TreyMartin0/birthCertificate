@@ -18,7 +18,7 @@ export default class SpeedTest extends LightningElement {
     }
 
     handleTestResults(event) {
-        const origin = 'https://candid-chaja-fd52b7.netlify.app/mock-speedtest.html'
+        const origin = 'https://candid-chaja-fd52b7.netlify.app'
         if (event.origin !== origin ){
             console.warn('Message blocked from incorrect origin')
             return;
