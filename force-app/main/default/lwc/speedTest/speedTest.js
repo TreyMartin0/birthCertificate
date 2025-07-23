@@ -9,7 +9,7 @@ export default class SpeedTest extends LightningElement {
     testResultsBound = this.handleTestResults.bind(this);
     
     handleSpeedTestClick() {
-        window.open(this.testUrl, '_blank');
+        this.showSpeedTest = true;
         this.attachMessageListener();
     }
 
