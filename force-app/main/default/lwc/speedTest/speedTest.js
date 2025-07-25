@@ -2,7 +2,7 @@ import { LightningElement } from 'lwc';
 
 export default class SpeedTest extends LightningElement {
     showSpeedTest = false;
-    testUrl = 'https://candid-chaja-fd52b7.netlify.app/mock-speedtest.html';
+    testUrl = 'https://citynetllc.speedtestcustom.com';
     downloadSpeed = '';
     uploadSpeed = '';
 
@@ -18,7 +18,7 @@ export default class SpeedTest extends LightningElement {
     }
 
     handleTestResults(event) {
-        const origin = 'https://candid-chaja-fd52b7.netlify.app'
+        const origin = 'https://citynetllc.speedtestcustom.com';
         if (event.origin !== origin ){
             console.warn('Message blocked from incorrect origin')
             return;
